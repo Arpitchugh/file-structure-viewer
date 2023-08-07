@@ -1,5 +1,5 @@
 // Example file structure data
-export const fileStructureData = [
+export const folderStructureData = [
 	{
 		name: 'documents',
 		children: [

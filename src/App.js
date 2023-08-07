@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { folderStructureData } from './folderStructureData';
 
 const File = ({ name, onRename, onDelete }) => {
 	const [isEditing, setIsEditing] = useState(false);
@@ -256,31 +257,8 @@ const FileStructure = ({ data, onUpdate }) => {
 };
 
 function App() {
-	const [fileStructureData, setFileStructureData] = useState([
-		{
-			name: 'documents',
-			children: [
-				{
-					name: 'work',
-					children: [
-						{ name: 'report.docx' },
-						{ name: 'presentation.pptx' },
-					],
-				},
-				{
-					name: 'personal',
-					children: [
-						{ name: 'resume.pdf' },
-						{ name: 'cover_letter.docx' },
-					],
-				},
-			],
-		},
-		{
-			name: 'images',
-			children: [{ name: 'photo.jpg' }, { name: 'logo.png' }],
-		},
-	]);
+	const [fileStructureData, setFileStructureData] =
+		useState(folderStructureData);
 
 	const handleUpdateFileStructure = newData => {
 		setFileStructureData(newData);
@@ -298,4 +276,3 @@ function App() {
 }
 
 export default App;
- 
